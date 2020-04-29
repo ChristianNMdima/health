@@ -153,14 +153,14 @@ include 'action.php';
     <?php while($row=$result->fetch_assoc()){ ?> 
       <tr>
         <td><?= $row['tracknum']; ?></td>
-        <td><?= $row['names']; ?</td>
-        <td><?= $row['surname']; ?</td>
-        <td><?= $row['position']; ?</td>
-        <td><?= $row['facility']; ?</td>
-        <td><?= $row['demandcode']; ?</td>
-        <td><?= $row['demandnum']; ?</td>
-        <td><?= $row['catnum']; ?</td>
-        <td><?= $row['orderqty']; ?</td>
+        <td><?= $row['names']; ?></td>
+        <td><?= $row['surname']; ?></td>
+        <td><?= $row['position']; ?></td>
+        <td><?= $row['facility']; ?></td>
+        <td><?= $row['demandcode']; ?></td>
+        <td><?= $row['demandnum']; ?></td>
+        <td><?= $row['catnum']; ?></td>
+        <td><?= $row['orderqty']; ?></td>
         <td><img src="<?= $row['photo']; ?>" width="25"></td>
         <td>
             <a href="details.php"?details=<?= $row['tracnum']; ?> class="
