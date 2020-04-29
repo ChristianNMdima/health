@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<link rel="stylesheet" href="form.css" type="text/css">
 
 <head>
     <meta charset="UTF-8">
@@ -66,8 +66,8 @@
            
            <div class="footer">
          
-           <title>Transactions</title>
-           
+          
+
     </div>
 </form>
 </div>

@@ -1,15 +1,17 @@
+<?php
+include 'action.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
-<link rel="stylesheet" href="form.css" type="text/css">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content= "sahil kumar">
+    <meta name="author" content= "Themba Sikosana">
     <meta http-equiv="X-UA-Compatible" content=" content="ie=EDGE">
     <META NAME="VIEWPORT" content="width=device-width, initial-scale=1,
     shrink-to-fit=no">
-    <title>Transactions</title>
-
+    <title>Requisitions</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <!-- jQuery library -->
@@ -23,7 +25,7 @@
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <!-- Brand -->
-        <a class="navbar-brand" href="#">TRANSACTIONS</a>
+        <a class="navbar-brand" href="requisitions">requsitions</a>
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
@@ -32,24 +34,15 @@
   <!-- Navbar links -->
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav"> 
-    <li class="nav-item">
-        <a class="nav-link" href="home.php">Home</a>
-      </li> 
-    <li class="nav-item">
-        <a class="nav-link" href="RequIsitions.php">Capture Requisition</a>
-      </li> 
       <li class="nav-item">
-        <a class="nav-link" href="#">Authorise Requistion</a>
+        <a class="nav-link" href="#">Authorise requsition</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="ReceiptReq.php">Receive Requisition</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="#">Authorise Payment</a>
+        <a class="nav-link" href="#">UnAuthorised Requistion</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="welcome.html">Exit</a>
-      </li> 
+        <a class="nav-link" href="#">Receive order</a>
+      </li>
 
         
        
@@ -61,32 +54,27 @@
   </form>
 </nav>
     <div class=container-fluid">
-         
-           <div class="row justify-content-center">
+          <div class="row justify-content-center">
             <div class="col-md-10">
-           
-                    
-            </div>
+                    <h3 class="text-center text-green">CAPTURE REQUISITION</H3>
+                    </div>
            </div>
             <div class="row">
             <div class="col-md-4">
-                <h3 class="text-center text-info">Capture Receipt</h3>
-                
-                    <form action="#" method="post" enctype="multipart/form-data">
+                <h3 class="text-center text-info">Add record</h3>
+                    <form action="action.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input type="text" name="Demand Number" class="form-control" placeholder=
+                        <input type="text" name="Demandnum" class="form-control" placeholder=
                         "enter Demand Number" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="Catalog Number" class="form-control" placeholder=
+                        <input type="text" name="Catnum" class="form-control" placeholder=
                         "Catalog Number" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="Quantity Ordered" class="form-control" placeholder=
+                        <input type="text" name="QtyOrdered" class="form-control" placeholder=
                         "Quantity Ordered" required>
                     </div>
-                    <p><label>Enter date of receipt : </label>
-                    <input type="date" id="Order Date" name="Order Date">
                     <div class="form-group">
                         <input type="file" name="image" class="custom-file">
                     </div>
@@ -94,15 +82,12 @@
                         <input type="submit" name="add" class="btn "btn-primary btn-block
                         " value="add record">
                     </div>    
-            
-                    
                    </form>
              </div>
             <div class="col-md-8">
-            <h3 class="text-center text-green">Browse Records</H3>
+            <h3 class="text-center text-green">Requisition's Records</H3>
             <table class="table table-bordered table-hover">
     <thead>
-    
       <tr>
         <th>TrackingNum</th>
         <th>image</th>
@@ -110,10 +95,7 @@
         <th>surnamename</th>
         <th>demandnum</th>
         <th>catnum</th>
-        <th>qty received</th>
-        
-            
-    
+        <th>qtyordered</th>
         <th>action</th>
       </tr>
     </thead>
