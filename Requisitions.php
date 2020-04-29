@@ -163,7 +163,7 @@ include 'action.php';
         <td><?= $row['orderqty']; ?></td>
         <td><img src="<?= $row['photo']; ?>" width="25"></td>
         <td>
-            <a href="details.php"?details=<?= $row['tracnum']; ?> class="
+            <a href="details.php?details=<?= $row['tracnum']; ?>" class="
             badge bagde-primary p-2">Details</a> |
             <a href="action.php?delete=<?= $row['tracknum']; ?>"  class="
             badge bagde-danger p-2">Delete</a> |
