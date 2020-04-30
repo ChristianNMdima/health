@@ -27,7 +27,7 @@ $SESSION['res_type']= "success";
 }
 if(isset($_GET['delete'])){
 $tracnum=?$_GET['delete'];
-$query="DELETE FROM requisition WHERE transaction=?";
+$query="DELETE FROM requisitions WHERE requisitions=?";
 $stmt=$conn->prepare($query);
 $stmt->bind_param("i",$tracknum);
 $stmt->execute();

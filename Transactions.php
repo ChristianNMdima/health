@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content= "sahil kumar">
+    <meta name="author" content= "Themba Sikosana">
     <meta http-equiv="X-UA-Compatible" content=" content="ie=EDGE">
     <META NAME="VIEWPORT" content="width=device-width, initial-scale=1,
     shrink-to-fit=no">
@@ -36,10 +36,10 @@
         <a class="nav-link" href="home.php">Home</a>
       </li> 
     <li class="nav-item">
-        <a class="nav-link" href="RequIsitions.php">Capture Requisition</a>
+        <a class="nav-link" href="Requisitions.php">Capture Requisition</a>
       </li> 
       <li class="nav-item">
-        <a class="nav-link" href="#">Authorise Requistion</a>
+        <a class="nav-link" href="authorisereq.php">Authorise Requistion</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="ReceiptReq.php">Receive Requisition</a>
@@ -56,19 +56,15 @@
     <form class="form-inline" action="/action_page.php">
         <input class="form-control mr-sm-2" type="text" placeholder="Search">
         <button class="btn btn-primary" type="submit">Search</button>
-  </form>
+  
+  
+      </form>
   </nav>
-
-  </div>
-  <button type="button" onclick> href="requisitions.php>requisitions</button>  
-  <button type="button" onclick="alert('Hello world!')">Click Me!</button>
-  <button type="button" onclick="alert('Hello world!')">Click Me!</button>
-           
-           <div class="footer">
-         
-          
-
-    </div>
+  <img src="health logo.png" alt="health logo" width="350" height="80" align="center">
+  <h1 class="text-center text-white">TRANSACTIONS PAGE</h1>
+  
+  
+  </ul>
 </form>
 </div>
 </body>

@@ -1,7 +1,7 @@
 <?php
-include 'action.php';
+//include 'action.php';
 ?>
-<link rel="stylesheet" href="form.css" type="text/css">
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +51,7 @@ include 'action.php';
         <a class="nav-link" href="Requisitions.php">Capture Requisition</a>
       </li> 
       <li class="nav-item">
-        <a class="nav-link" href="#">Authorise Requistion</a>
+        <a class="nav-link" href="Authorisereq.php">Authorise Requistion</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="ReceiptReq.php">Receive Requisition</a>
@@ -67,111 +67,122 @@ include 'action.php';
        
     </ul>
 </div>
+</div>
     <form class="form-inline" action="/action_page.php">
         <input class="form-control mr-sm-2" type="text" placeholder="Search">
         <button class="btn btn-primary" type="submit">Search</button>
   </form>
 </nav>
     <div class=container-fluid">
-          <div class="row justify-content-center">
+         
+           <div class="row justify-content-center">
             <div class="col-md-10">
-              <h3 xlass="text-centre-dark mt-2">Transactions</h3>
-              <hr>
-               <?php if(isset($_SESSION['response'])){ ?>
-                <div class="alert alert-<?= $_SESSION['res_type']; ?>
-                  alert-dismissible text center">
-                  <button type="button" class="close" data-dismiss="alert">&times;
-                  </button>
-                  <b class= "text-center"><? $_SESSION['response']; ?></b>
-                </div>
-              <?php } unset($_SESSION['response']) ?>
-          </div>
-        </div>
-      <div class="row">
-        <div class="col-md-4">
-          <h3 class="text-center text-info">Capture Requsition</h3>
-          <form action="action.php" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-              <input type="text" name="tracknum" class="form-control" placeholder="tracknum" required>
-               <div class="form-group"> <input type="text" name="names" class="form-control" placeholder= "Names" required>
+           
+                    
             </div>
-            <div class="form-group">
-              <input type="text" name="surname" class="form-control" placeholder= "Surname" required>
-            </div>
-            <div class="form-group">
-               <input type="text" name="position" class="form-control" placeholder= "Position" required>
-            </div>
-            <div class="form-group">
-               <input type="text" name="facility" class="form-control" placeholder= "Facility" required>
+           </div>
+            <div class="row">
+            <div class="col-md-4">
+            
+            <img src="requisitionsimage.jpg" alt="requisitionsimage" width="120" height="170" align="center">
+              
+                <h3 class="text-center text-info">Add Record</h3>
+                
+                    <form action="#" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="text" name="tracknum" class="form-control" placeholder=
+                        "tracknum" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder=
+                        "name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="surname" class="form-control" placeholder=
+                        "surname" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="position" class="form-control" placeholder=
+                        "position" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="facility" class="form-control" placeholder=
+                        "facility" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="district" class="form-control" placeholder=
+                        "district" required>
+                     </div>
+                     <div class="form-group">
+                        <input type="text" name="demandnum" class="form-control" placeholder=
+                        "demandnum" required>
+                     </div>
+                     <div class="form-group">
+                        <input type="text" name="demandcode" class="form-control" placeholder=
+                        "demandcode" required>
+                     </div>
+                     <input type="text" name="catnum" class="form-control" placeholder=
+                        "catnum" required>
+                     <br>
+                     <div class="form-group">
+                     <input type="text" name="Quantity Ordered" class="form-control" placeholder=
+                        "Quantity Ordered" required>
+                    </div>
+                    <p><label>Enter date of receipt : </label>
+                    <input type="date" id="Order Date" name="Order Date">
+                    <div class="form-group">
+                        <input type="file" name="image" class="custom-file">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="add" class="btn "btn-primary btn-block"
+                         value="add record">
+                    </div>    
+            
+                    
+                   </form>
              </div>
-             <div class="form-group">
-               <input type="text" name="Demandcode" class="form-control" placeholder= "Demandcode" required>
-              </div>
-              <div class="form-group">
-               <input type="text" name="Demandnum" class="form-control" placeholder= "enter Demand Number" required>
-              </div>
-              <div class="form-group">
-                <input type="text" name="Catnum" class="form-control" placeholder= "Catalog Number" required>
-                </div>
-              <div class="form-group">
-                <input type="text" name="QtyOrdered" class="form-control" placeholder= "Quantity Ordered" required>
-              </div>
-              <div class="form-group">
-                 <input type="file" name="photo" class="custom-file">
-              </div>
-              <div class="form-group">
-                  <input type="submit" name="add" class="btn "btn-primary btn-block value= "add record">
-    </div>    
-  </form>
-    </div>
-    <div class="col-md-8">
-    <?php
-      $query="SELECT * FROM requisitions";
-      $stmt=$conn->prepare($query);
-      $stmt->execute();
-      $result=$stmt->get_result();
-    ?>
-<h3 class="text-center text-green">Browse Records</H3>
-  <table class="table table-hover">
+            <div class="col-md-8">
+              <br>
+              
+              <h1 class="text-center text-info">REQUSITIONS PAGE</h1>
+             
+              <br>
+              <br>
+              <h3 class="text-center text-green">Browse Records</H3>
+            <table class="table table-bordered table-hover">
     <thead>
+    
       <tr>
-      
-        
-        <th>names</th>
+        <th>TrackNum</th>
+        <th>PPdocs</th>
+        <th>name</th>
         <th>surname</th>
-        <th>position</th>
-        <th>facility</th>
-        <th>demandcode</th>
         <th>demandnum</th>
         <th>catnum</th>
-        <th>qtyordered</th>
-        <th>image</th>
+        <th>qty received</th>
+        <th>qty ordered</th>
+        
+            
+    
         <th>action</th>
-     </tr>
+      </tr>
     </thead>
     <tbody>
-    <?php while($row=$result->fetch_assoc()){ ?> 
       <tr>
-        <td><?= $row['tracknum']; ?></td>
-        <td><?= $row['names']; ?></td>
-        <td><?= $row['surname']; ?></td>
-        <td><?= $row['position']; ?></td>
-        <td><?= $row['facility']; ?></td>
-        <td><?= $row['demandcode']; ?></td>
-        <td><?= $row['demandnum']; ?></td>
-        <td><?= $row['catnum']; ?></td>
-        <td><?= $row['orderqty']; ?></td>
-        <td><img src="<?= $row['photo']; ?>" width="25"></td>
+        <td>123</td>
+        <td><img src"" width="25"></td>
+        <td>Themba</td>
+        <td>Sikosana</td>
+        <td>EDH123</td>
+        <td>1234567</td>
+        <td>123</td>
+        <td>123</td>
         <td>
-            <a href="details.php?details=<?= $row['tracnum']; ?>" class="
-            badge bagde-primary p-2">Details</a> |
-            <a href="action.php?delete=<?= $row['tracknum']; ?>"  class="
-            badge bagde-danger p-2">Delete</a> |
-            <a href="requisitions.php?edit=<?= $row['id']; ?>" class="badge 
-            bagde-succes p-2">Edit</a> |
-        </td>
+            <a href="#" class="badge bagde-primary p-2">Details</a> |
+            <a href="#" class="badge bagde-danger p-2">Delete</a> |
+            <a href="#" class="badge bagde-succes p_2">Edit</a> |
+
       </tr>
-  <?php } ?>
     </tbody>
   </table>
 </div>

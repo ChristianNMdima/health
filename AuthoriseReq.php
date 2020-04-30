@@ -1,8 +1,21 @@
+<?php
+//include 'action.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 
 <head>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
     <meta charset="UTF-8">
     <meta name="author" content= "Themba Sikosana">
     <meta http-equiv="X-UA-Compatible" content=" content="ie=EDGE">
@@ -21,18 +34,12 @@
 </head>
 
 <body>
-<style>
-body  {
-
-}
-</style>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <!-- Brand -->
         <a class="navbar-brand" href="#">TRANSACTIONS</a>
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <span class="navbar-toggler-icon"></span>  </button>
 
   <!-- Navbar links -->
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -44,7 +51,7 @@ body  {
         <a class="nav-link" href="Requisitions.php">Capture Requisition</a>
       </li> 
       <li class="nav-item">
-        <a class="nav-link" href="Authorisereq.php">Authorise Requistion</a>
+        <a class="nav-link" href="#">Authorise Requistion</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="ReceiptReq.php">Receive Requisition</a>
@@ -59,6 +66,7 @@ body  {
         
        
     </ul>
+</div>
 </div>
     <form class="form-inline" action="/action_page.php">
         <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -75,36 +83,59 @@ body  {
            </div>
             <div class="row">
             <div class="col-md-4">
-            <img src="receiptimage.jpg" alt="receiptimage" width="140" height="170" align="center">
-                <h3 class="text-center text-info">Call up Requsition to Receive</h3>
+            
+            <img src="Authoriseimage.png" alt="authoriseimage" width="180" height="170" align="center">
+              
+                <h3 class="text-center text-info">Enter Tracknum of Requisition to Authorise</h3>
                 
-                <form action="#" method="post" enctype="multipart/form-data">
-                
+                    <form action="#" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input type="text" name="Tracknum" class="form-control" placeholder=
-                        "Enter Tracking Number" required>
+                        <input type="text" name="tracknum" class="form-control" placeholder=
+                        "tracknum" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="Demandnum" class="form-control" placeholder=
-                        "Demand Number" required>
+                        <input type="text" name="name" class="form-control" placeholder=
+                        "name" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="Catnum" class="form-control" placeholder=
-                        "Catalog Number" required>
+                        <input type="text" name="surname" class="form-control" placeholder=
+                        "surname" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="Quantity Ordered" class="form-control" placeholder=
+                        <input type="text" name="position" class="form-control" placeholder=
+                        "position" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="facility" class="form-control" placeholder=
+                        "facility" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="district" class="form-control" placeholder=
+                        "district" required>
+                     </div>
+                     <div class="form-group">
+                        <input type="text" name="demandnum" class="form-control" placeholder=
+                        "demandnum" required>
+                     </div>
+                     <div class="form-group">
+                        <input type="text" name="demandcode" class="form-control" placeholder=
+                        "demandcode" required>
+                     </div>
+                     <input type="text" name="catnum" class="form-control" placeholder=
+                        "catnum" required>
+                     <br>
+                     <div class="form-group">
+                     <input type="text" name="Quantity Ordered" class="form-control" placeholder=
                         "Quantity Ordered" required>
                     </div>
                     <p><label>Enter date of receipt : </label>
                     <input type="date" id="Order Date" name="Order Date">
                     <div class="form-group">
-                    <p><label>Upload Payment Pack Documents : </label>
                         <input type="file" name="image" class="custom-file">
                     </div>
                     <div class="form-group">
-                        <input type="submit" name="add" class="btn "btn-primary btn-block
-                        " value="add Receipt">
+                        <input type="submit" name="add" class="btn "btn-primary btn-block"
+                         value="add record">
                     </div>    
             
                     
@@ -112,22 +143,24 @@ body  {
              </div>
             <div class="col-md-8">
               <br>
-              <h1 class="text-center text-info">RECEIPTS PAGE</h1>
+              
+              <h1 class="text-center text-info">AUTHORISE REQUSITIONS PAGE</h1>
              
               <br>
               <br>
-              <h3 class="text-center text-green">Browse Records</H3>
+              <h3 class="text-center text-green">SELECT RECORD</H3>
             <table class="table table-bordered table-hover">
     <thead>
     
       <tr>
-        <th>TrackingNum</th>
-        <th>image</th>
+        <th>TrackNum</th>
+        <th>PPdocs</th>
         <th>name</th>
         <th>surname</th>
         <th>demandnum</th>
         <th>catnum</th>
         <th>qty received</th>
+        <th>qty ordered</th>
         
             
     
@@ -142,6 +175,7 @@ body  {
         <td>Sikosana</td>
         <td>EDH123</td>
         <td>1234567</td>
+        <td>123</td>
         <td>123</td>
         <td>
             <a href="#" class="badge bagde-primary p-2">Details</a> |
